@@ -1,0 +1,125 @@
+#include <iostream>
+using namespace std;
+
+
+class Hero{
+ 
+     // properties
+  
+    private:
+    
+        int health;
+    
+    public:
+    
+       
+        char level;
+    
+    
+    
+        Hero(){   // def const 
+            cout<<"Default Constructer Called ..... "<<endl;
+        }   
+        
+        
+        
+        
+        Hero(int h){  // parametrized const 
+            cout<<"this -> "<<this<<endl;
+            this->health = h;
+        }
+        
+        Hero(int h , char l){  // parametrized const 
+            cout<<"this -> "<<this<<endl;
+            
+            this->health = h;
+            this->level = l;
+        }
+        
+        
+        
+        
+        int gethealth(){
+            return health;
+        }
+        
+        char getlevel(){
+            return level;
+        }
+        
+        
+        
+        void sethealth(int h){
+            health = h;
+        }
+        
+        void setlevel(char lvl){
+            level = lvl;
+        }
+        
+        
+        
+        
+};
+
+
+
+
+
+
+int main()
+{
+    
+ 
+// Concept of constructer 
+    
+  // Default const 
+  
+  /*
+    // bcz of written ur own default const // def const overwritten 
+    
+     // Static
+        Hero ramesh;   // ramesh.Hero();  // def const called   
+        
+    // Dyanamic  // u can create with bracket or without .. 
+    
+        Hero *paul = new Hero;   // (*paul).Hero();  //  def const called 
+        Hero *paul1 = new Hero();   //  same ouptut as above no change ..  
+    
+  */
+  
+  
+  
+  // parametrized const 
+  
+    Hero ramesh(40);   // parametrized const  called // let say this adress : 700
+    
+    cout<<"Adress of ramesh : "<<&ramesh<<endl;  //  ramesh object adress : 700  will be same 
+    cout<<"get health : "<<ramesh.gethealth()<<endl;  // health set to 40 
+    
+    
+  cout<<endl;
+    
+    // Hero ramesh(50,'C');  // error // bcz redeclartion 
+    
+    Hero hemlo(50,'C');
+    
+    cout<<"hemlo , Adress : "<<&hemlo<<endl;
+    cout<<"get health "<<hemlo.gethealth();
+    cout<<"get Level "<<hemlo.getlevel();
+
+  
+
+
+
+
+	// if u remove default const
+    
+
+   	Hero h3;  // error bcz defualt removed , and presence of paramertred  the default one would be died 
+    
+     
+     
+
+    return 0;   
+}

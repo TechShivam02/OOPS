@@ -1,0 +1,106 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+class Hero{
+ 
+     // properties
+  
+    private:
+    
+        int health;
+    
+    public:
+    
+       
+        char level;
+        char *name;
+    
+    
+    
+        Hero(){   // def const 
+            cout<<"Default Constructer Called ..... "<<endl;
+            name = new char[100];
+        }   
+        
+        
+        
+        
+        
+        void print(){
+            
+            cout<<endl;
+            
+            cout<<"[Name : "<<this->name<<" , ";
+            cout<<"health : "<<this->health<<" , ";
+            cout<<"level : "<<this->level<<"  ]";
+            
+            cout<<endl;
+            
+        }
+        
+        
+        
+        int gethealth(){
+            return health;
+        }
+        
+        char getlevel(){
+            return level;
+        }
+        
+        
+        
+        void sethealth(int h){
+            health = h;
+        }
+        
+        void setlevel(char lvl){
+            level = lvl;
+        }
+        
+        
+        
+        void setname(char name[]){
+            strcpy(this->name , name);
+        }
+        
+        
+        
+};
+
+
+
+
+
+
+int main()
+{
+    
+    Hero hero1;
+    
+    hero1.sethealth(12);
+    hero1.setlevel('D');
+    char name[7] = "Babbar";
+    
+    hero1.setname(name);
+    
+    
+    hero1.print();
+    
+    
+  // use Default copy const 
+  
+  Hero hero2(hero1);
+  hero2.print();
+  
+  
+  
+  hero1.name[0] = 'G';
+  hero1.print();        // hero1 = "Gabbar"
+  
+  hero2.print();   // hero2.name = "Gabbar"
+
+    
+    return 0;   
+}

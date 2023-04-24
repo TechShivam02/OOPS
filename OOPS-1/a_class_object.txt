@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+
+class Hero{
+ 
+     // properties
+  
+    public:
+        int health;
+        char level;
+        
+    void printlevel(){
+        cout<<level<<endl;
+    }
+        
+};
+
+
+
+
+
+
+int main()
+{
+    // creation of a object
+    
+    Hero h1;
+    // cout<<"size : "<<sizeof(h1);  // in class if only int hero written  ,,  4 , bcz int = 4 bytes  
+    /*  string : 32  , char : 1 byte   , bool : 2 byte ,   short : 2 ,  int : 4   , float: 4  ,  double : 8  ,  long : 8  , long long : 8    */
+    
+    
+    
+    cout<<"health : "<<h1.health<<endl;  // output : 0   garbage value
+    h1.printlevel();   // output : nothing
+    
+    cout<<endl;
+    
+    
+            h1.health = 70;   // set 
+            h1.level = 'A';   // set
+    
+    
+     cout<<"health : "<<h1.health<<endl;  // 70
+     h1.printlevel();  // A
+    
+
+    return 0;
+}

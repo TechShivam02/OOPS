@@ -1,0 +1,133 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+class Hero{
+ 
+     // properties
+  
+    private:
+    
+        int health;
+    
+    public:
+    
+       
+        char level;
+        char *name;
+        
+        static int timetoComp;
+    
+    
+    
+        Hero(){   // def const 
+            cout<<"D Constructer Called ..... "<<endl;
+            name = new char[100];
+        }   
+        
+        
+        Hero(int h , char l){ 
+          this->health = h;
+           this->level=l;
+        }   
+        
+        
+        
+        
+        
+        Hero(Hero &temp){
+            char *ch = new char[strlen(temp.name)+1];
+            strcpy(ch , temp.name);  // destString   whatTocopy
+            
+            this->name = ch;
+            
+            cout<<"copy Constructer called"<<endl;
+            
+            this->health = temp.health;
+            this->level = temp.level;
+            
+            
+                
+        }
+        
+        
+        
+        
+        void print(){
+            
+            cout<<endl;
+            
+            cout<<"[health : "<<this->health<<" , ";
+            cout<<"level : "<<this->level<<"  ]";
+            
+            
+        }
+        
+        
+        
+        int gethealth(){
+            return health;
+        }
+        
+        char getlevel(){
+            return level;
+        }
+        
+        
+        
+        void sethealth(int h){
+            health = h;
+        }
+        
+        void setlevel(char lvl){
+            level = lvl;
+        }
+        
+        
+        
+        void setname(char name[]){
+            strcpy(this->name , name);
+        }
+        
+        
+        
+        
+    static int randomout(){
+            // return health;   // error  bcz it can only acess the static member
+            // return level;    // error  bcz it can only acess the static member
+            
+            // return this;           // error  we can't use this  , bcz this-> pointer to a curr object and static means no need to create object
+            // return this->health;   // error  we can't use this  , bcz this-> pointer to a curr object and static means no need to create object
+             
+            return timetoComp;   // Passed 
+            
+    }
+        
+     ~Hero(){
+         cout<<endl<<"Default Destructer Called "<<endl; 
+     }
+        
+        
+};
+
+
+
+
+int Hero::timetoComp=10;
+
+
+
+int main()
+{
+    
+    cout<<Hero::timetoComp<<endl;
+    
+    cout<<endl<<"Static func: " <<Hero::randomout();
+    
+   
+    
+    
+    
+    
+    return 0;   
+}

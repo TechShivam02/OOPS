@@ -1,0 +1,127 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+class Hero{
+ 
+     // properties
+  
+    private:
+    
+        int health;
+    
+    public:
+    
+       
+        char level;
+        char *name;
+    
+    
+    
+        Hero(){   // def const 
+            cout<<"D Constructer Called ..... "<<endl;
+            name = new char[100];
+        }   
+        
+        
+        Hero(int h , char l){ 
+          this->health = h;
+           this->level=l;
+        }   
+        
+        
+        
+        
+        
+        Hero(Hero &temp){
+            char *ch = new char[strlen(temp.name)+1];
+            strcpy(ch , temp.name);  // destString   whatTocopy
+            
+            this->name = ch;
+            
+            cout<<"copy Constructer called"<<endl;
+            
+            this->health = temp.health;
+            this->level = temp.level;
+            
+            
+                
+        }
+        
+        
+        
+        
+        void print(){
+            
+            cout<<endl;
+            
+            cout<<"[health : "<<this->health<<" , ";
+            cout<<"level : "<<this->level<<"  ]";
+            
+            
+        }
+        
+        
+        
+        int gethealth(){
+            return health;
+        }
+        
+        char getlevel(){
+            return level;
+        }
+        
+        
+        
+        void sethealth(int h){
+            health = h;
+        }
+        
+        void setlevel(char lvl){
+            level = lvl;
+        }
+        
+        
+        
+        void setname(char name[]){
+            strcpy(this->name , name);
+        }
+        
+        
+     ~Hero(){
+         cout<<endl<<"Default Destructer Called "<<endl; 
+     }
+        
+        
+};
+
+
+
+
+
+
+int main()
+{
+    
+    // static creating an object
+     Hero h1; 
+  
+ 
+    // dynamic 
+    
+    Hero *h2 = new Hero;
+    // delete h2;   // to call Destructer which dynamic alloc    out : def des called
+    
+    /*
+    
+    D Constructer called 
+    D Constructer called
+    
+    Default Destructer called
+    
+    
+    */
+    
+    
+    return 0;   
+}

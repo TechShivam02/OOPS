@@ -1,0 +1,119 @@
+#include <iostream>
+using namespace std;
+
+
+class Hero{
+ 
+     // properties
+  
+    private:
+    
+        int health;
+    
+    public:
+    
+       
+        char level;
+             
+      int gethealth(){
+            return health;
+        }
+        
+        char getlevel(){
+            return level;
+        }
+        
+        
+        
+        void sethealth(int h){
+            health = h;
+        }
+        
+        void setlevel(char lvl){
+            level = lvl;
+        }
+        
+        
+        
+        
+};
+
+
+
+
+
+
+int main()
+{
+    // creation of a object
+    
+    
+    /*
+    Hero ramesh;
+    
+    cout<<"ramesh health : "<<ramesh.gethealth()<<endl;
+    
+          // use setter;
+          
+          ramesh.sethealth(90);
+          ramesh.level = 'A';  // default is public
+    
+    cout<<endl;
+    
+        
+     cout<<"Ramesh health : "<<ramesh.gethealth()<<endl;
+     cout<<"Ramesh Level : "<<ramesh.getlevel()<<endl;
+     
+     
+     */
+     
+     
+    
+    /*
+    
+    //  Static and Dynamic Allocation ...
+    
+    
+    Hero h1;
+    
+    h1.sethealth(60);
+    h1.setlevel('B');
+    
+    cout<<"h1 health : "<<h1.gethealth()<<endl;
+    cout<<"h1 Level : "<<h1.getlevel()<<endl;
+    
+    
+cout<<endl;
+    
+     //  Dyanamic Alloc... 
+    
+    Hero *h2 = new Hero;
+    
+    // ERROR      cout<<"h2 health : "<<h2.gethealth()<<endl;  // h2 ---> adress , value object =  *h2
+    // ERROR      cout<<"h2 Level : "<<h2.getlevel()<<endl;   //  h2 ---> adress , value object =  *h2
+    
+    
+    
+    cout<<"h2 health : "<<(*h2).gethealth()<<endl;
+    cout<<"h2 Level : "<<(*h2).getlevel()<<endl;
+    
+cout<<endl;
+    
+    (*h2).sethealth(96);
+    (*h2).setlevel('A');
+    
+    
+    
+    cout<<"h2 health : "<<(*h2).gethealth()<<endl;
+    cout<<"h2 Level : "<<(*h2).getlevel()<<endl;
+    
+                    // OR 
+                    
+    cout<<"h2 health : "<<h2->gethealth()<<endl;
+    cout<<"h2 Level : "<<h2->getlevel()<<endl;
+    
+    
+ */ 
+ 
+	return 0 ;
+ }
