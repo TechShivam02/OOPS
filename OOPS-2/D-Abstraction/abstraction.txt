@@ -1,0 +1,60 @@
+Abstraction means providing only some of the information to the user by hiding its internal implementation details. 
+
+Real-life example: When you send an email to someone, you just click send, and you get the success message; what happens when you click send, how data is transmitted over the network to the recipient is hidden from you (because it is irrelevant to you).
+
+The class helps us to group data members and member functions using available access specifiers
+
+
+
+
+Advantages Of Abstraction ●
+1)Only you can make changes to your data or function, and no one else can. ●
+2)It makes the application secure by not allowing anyone else to see the background details. ●
+3)Increases the reusability of the code. ●
+4)Avoids duplication of your code.
+
+
+
+
+
+#include <iostream>
+using namespace std;
+  
+class TestAbstraction
+{
+    private:
+        string x, y;
+  
+    public:
+      
+        // method to set values of 
+        // private members
+        void set(string a, string b)
+        {
+            x = a;
+            y = b;
+        }
+        //printing values  
+        void print()
+        {
+            cout<<"x = " << x << endl;
+            cout<<"y = " << y << endl;
+        }
+};
+  
+int main() 
+{
+    // object of TestAbstraction
+    TestAbstraction t1;
+    t1.set("Scaler", "Academy");
+    t1.print();
+    
+    return 0;
+}
+
+
+// output .... 
+
+
+x = Scaler
+y = Academy

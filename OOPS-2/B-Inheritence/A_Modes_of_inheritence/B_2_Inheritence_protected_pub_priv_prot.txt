@@ -1,0 +1,147 @@
+#include <iostream>
+using namespace std;
+
+
+
+class Human{
+    
+    protected :
+     
+        int height;
+     
+    public:
+    
+     int weight;
+     int age;
+     
+     int getAge()
+     {
+         return this->age;
+         
+     }
+     
+     void setWeight(int w){
+         this->weight = w;
+     }
+     
+     
+};
+
+
+
+
+class def1 : public Human{
+  
+    public :
+
+     string color;
+      
+     void sleep(){
+         cout<<"Man is sleeping "<<endl;
+     }
+     
+     // height can be used only in side this class , or can be used by getter or setter 
+    
+    int getMyheight(){
+        return this->height;
+    }
+    
+    void setheight(int h)
+    {
+        this->height = h;
+    }
+    
+};
+
+
+
+class def2 : protected Human{
+  
+    public :
+
+     string color;
+      
+     void sleep(){
+         cout<<"Man is sleeping "<<endl;
+     }
+     
+     // height can be used only in side this class , or can be used by getter or setter 
+    
+    int getMyheight(){
+        return this->height;
+    }
+    
+    void setheight(int h)
+    {
+        this->height = h;
+    }
+    
+};
+
+
+
+
+
+class def3 : private Human{
+  
+    public :
+
+     string color;
+      
+     void sleep(){
+         cout<<"Man is sleeping "<<endl;
+     }
+     
+     
+     
+    int getMyheight(){
+        return this->height;
+    }
+    
+    void setheight(int h)
+    {
+        this->height = h;
+    }
+    
+};
+
+
+
+
+
+
+int main()
+{
+    
+    /*  protected      public  private   protected  */ 
+    
+    
+    // def1 d1;
+    // // cout<<d1.height<<endl; // error 
+    
+    // d1.setheight(50);  // set to 50
+    // cout<<d1.getMyheight();  // 50
+    
+    
+    
+    
+    
+    
+    // def2 d2;
+    // // cout<<d2.height<<endl; // error 
+    
+    // d2.setheight(50);  // set to 50
+    // cout<<d2.getMyheight();  // 50
+    
+    
+    
+    // def3 d3;
+    // // cout<<d3.height<<endl; // error 
+    // d3.setheight(50);
+    // cout<<d3.getMyheight();
+    
+    
+    
+
+    return 0;
+}

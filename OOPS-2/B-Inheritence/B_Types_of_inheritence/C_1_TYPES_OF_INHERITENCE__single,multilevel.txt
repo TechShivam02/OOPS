@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+
+
+class Animal{
+    
+    public:
+    
+     int age;
+     int weight;
+     
+     void speak()
+     {
+        cout<<"Animal is Speaking "<<endl;
+         
+     }
+     
+     
+};
+
+
+
+class Dog : public Animal{
+    
+};
+
+ 
+class GermanShepherd : public Dog{
+    
+};
+
+
+int main()
+{
+    /*
+    // Single level inheritence
+    
+    Dog d;
+    d.speak();  //  Animal is speaking
+    
+    
+    cout<<d.age<<endl;   // 0
+    
+   */     
+    
+    
+    
+    
+    
+    /*
+    //  Multilevel inheritence 
+    
+    GermanShepherd gp;
+    gp.speak();         // Animal is speaking  // take care of ...       public -> public -> public = public
+    
+    */
+    
+    
+    
+    return 0;
+}

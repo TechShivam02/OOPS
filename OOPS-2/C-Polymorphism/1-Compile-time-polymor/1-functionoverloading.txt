@@ -1,0 +1,86 @@
+
+#include <iostream>
+using namespace std;
+
+
+class A{
+    
+    public:
+    
+        void sayHello()
+        {
+            cout<<"Hello How are you "<<endl;
+        }
+        
+       
+        
+        void sayHello(string str){      // func overloading  , diff no of arguments
+            cout<<"Hello World "<<endl; 
+        }
+        
+         void sayHello(string str , string str2){  // func overloading  , diff no of argumentd
+           cout<<"hello world hello world "<<endl;
+        }
+        
+        
+        void sayHello(char ch){   // func overloading  , diff type of argumentd
+            cout<<"hii"<<endl;  
+        }
+        
+};
+
+
+
+
+int main()
+{
+    
+    
+    /*
+          why need of func overloading 
+          
+          functional Overloading : 2 or more functions having the same name but diff parameters
+        
+        
+        
+        class A{
+            
+            public:
+            
+                void sayHello()
+                {
+                    cout<<"Hello How are you "<<endl;
+                }
+                
+                void sayHello(){
+                    cout<<"Hello World "<<endl; 
+                }
+                
+        };
+
+        
+        main(){
+            
+            A obj;
+            obj.sayHello();  // sayHello can't be overload   // same name   // To solve pass diff parameters 
+        
+        }
+        
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    A obj;
+    obj.sayHello();  // hello how are you
+    obj.sayHello("eerererer");   // hello world 
+    obj.sayHello("sdsd" , 2324);   // hemlo world hemlo
+    
+
+    return 0;
+}

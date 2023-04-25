@@ -1,0 +1,56 @@
+
+#include <iostream>
+using namespace std;
+
+
+class A{
+  
+    public:
+    
+    void abc(){
+        cout<<"Inside the ClassA "<<endl;
+    }
+
+};
+
+
+
+class B{
+  
+    public:
+    
+    void abc(){
+        cout<<"Inside the ClassB "<<endl;
+    }
+
+};
+
+
+
+
+
+class C : public A , public B{
+    
+    public:
+
+};
+
+
+
+
+int main()
+{
+    
+    C obj;
+    // obj.abc(); // ERROR  :  abc is ambiguos  ,, Soln -->  using the scope resolution operator 
+    
+    obj.A::abc();  // Output :  Inside the ClassA
+    obj.B::abc();  // Output :  Inside the ClassB
+    
+    
+    
+    
+    
+
+    return 0;
+}

@@ -1,0 +1,129 @@
+#include <iostream>
+using namespace std;
+
+
+
+class Human{
+    
+    private :
+     
+        int height;
+     
+    public:
+    
+     int weight;
+     int age;
+     
+     int getAge()
+     {
+         return this->age;
+         
+     }
+     
+     void setWeight(int w){
+         this->weight = w;
+     }
+     
+     
+};
+
+
+
+
+class efg1 : public Human{
+  
+    public :
+
+     string color;
+      
+     void sleep(){
+         cout<<"Man is sleeping "<<endl;
+     }
+     
+    
+    // int getMyheight(){    // bcz of height is private //   height cannot be used out of its class 
+    //     return this->height;   // error  
+    // }
+    
+    
+};
+
+
+
+class efg2 : protected Human{
+  
+    public :
+
+     string color;
+      
+     void sleep(){
+         cout<<"Man is sleeping "<<endl;
+     }
+     
+
+    // int getMyheight(){       // // bcz of height is private //   height cannot be used out of its class 
+    //     return this->height;
+    // }
+    
+    // void setheight(int h)   // // bcz of height is private //   height cannot be used out of its class 
+    // {
+    //     this->height = h;
+    // }
+    
+};
+
+
+
+
+
+class efg3 : private Human{
+  
+    public :
+
+     string color;
+      
+     void sleep(){
+         cout<<"Man is sleeping "<<endl;
+     }
+     
+     
+     
+    // int getMyheight(){
+    //     return this->height;
+    // }
+    
+    // void setheight(int h)
+    // {
+    //     this->height = h;
+    // }
+    
+};
+
+
+
+
+
+
+int main()
+{
+    
+    /*  private    public  private   protected  */ 
+    
+    
+    // efg1 e1;  
+    // cout<<e1.height<<endl;  // Error 
+    
+    
+    
+    // efg2 e2;
+    // cout<<e2.height<<endl;  // error 
+    
+    
+    
+    // efg3 e3;
+    // cout<<e3.height<<endl;  // error 
+    
+    
+
+    return 0;
+}

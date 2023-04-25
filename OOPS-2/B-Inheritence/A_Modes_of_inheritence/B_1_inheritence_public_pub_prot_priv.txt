@@ -1,0 +1,151 @@
+
+#include <iostream>
+using namespace std;
+
+
+
+class Human{
+    
+    public :
+     
+     int height;
+     int weight;
+     int age;
+     
+     int getAge()
+     {
+         return this->age;
+         
+     }
+     
+     void setWeight(int w){
+         this->weight = w;
+     }
+     
+     
+};
+
+
+class abc1 : public Human{
+  
+    public :
+
+     string color;
+      
+     void sleep(){
+         cout<<"Man is sleeping "<<endl;
+     }
+    
+};
+
+
+
+class abc2 : protected Human{
+  
+    public :
+
+     string color;
+      
+     void sleep(){
+         cout<<"Man is sleeping "<<endl;
+     }
+     
+     // height can be used only in side this class , or can be used by getter or setter 
+    
+    int getMyheight(){
+        return this->height;
+    }
+    
+    void setheight(int h)
+    {
+        this->height = h;
+    }
+    
+};
+
+
+
+
+class abc3 : private Human{
+  
+    public :
+
+     string color;
+      
+     void sleep(){
+         cout<<"Man is sleeping "<<endl;
+     }
+     
+     
+     int getMyheight(){
+        return this->height;
+    }
+    
+    void setheight(int h)
+    {
+        this->height = h;
+    }
+     
+    
+};
+
+
+
+
+
+int main()
+{
+    
+    /*  public       public   protected     private 
+    
+    
+                                      public public 
+      
+         
+    abc1 m1;   // public --> public  = public 
+    cout<<m1.getAge();
+    
+    
+    
+    
+                                     public protected
+
+    
+    abc2 m2;
+    cout<<m2.height<<endl;   // error     public --> protected   = protected 
+    
+     // to get height , u have to use getter or setter 
+    
+    abc2 m21;
+    cout<<m21.getMyheight()<<endl;
+    
+    m21.setheight(34);
+    
+    cout<<m21.getMyheight()<<endl;
+    
+    
+    
+    
+                        public  private 
+                        
+    abc3 m3;
+    cout<<m3.height <<endl;  // error  
+    
+    m3.setheight(40);  // u can , modify it in the child class sure  , by getter and setter ,  no error   , get setter will work
+    cout<<m3.getMyheight()<<endl;  //  no error   , get setter will work
+    
+    
+    
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    return 0;
+}

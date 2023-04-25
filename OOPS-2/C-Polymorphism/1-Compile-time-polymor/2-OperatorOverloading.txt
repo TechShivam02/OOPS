@@ -1,0 +1,47 @@
+
+#include <iostream>
+using namespace std;
+
+
+class B{
+
+    public :    
+    
+    int a;
+    
+    
+    void operator+ (B &obj){
+        
+        int val1= this->a;  // 4
+        int val2= obj.a;    // 7
+        
+        
+        cout<<"output : "<<val2-val1<<endl;
+        cout<<"Hello world "<<endl;  // '+' operator is used for printing ... 
+        
+    }
+    
+    
+    void operator() (){
+        cout<<"main bracket hoon : "<<this->a<<endl; // current object a value
+    }
+};
+
+
+int main()
+{
+    
+    B obj1;
+    B obj2;
+    
+    obj1.a=4;
+    obj2.a=7;
+    
+    obj1+obj2;  // output:3     Hello world
+    
+    obj1();  //  main bracket hoon : 4 
+    
+    
+
+    return 0;
+}
