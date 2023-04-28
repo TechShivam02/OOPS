@@ -1,0 +1,82 @@
+
+#include <iostream>
+using namespace std;
+
+
+class A{
+  
+  public:
+     void show(){
+        cout<<"Base Class"<<endl;
+    }
+    
+    // virtual void show(){   // line 61
+    //     cout<<"Base Class"<<endl;
+    // }
+    
+    
+    /*
+        // PURE VIRTUAL FUNCTION 
+        virtual void show() = 0;
+    
+    */
+    
+};
+
+class B : public A{
+    
+    public:
+    void show(){
+        cout<<"Derived Class"<<endl;
+    }
+    
+};
+
+
+
+int main()
+{
+    /*
+            B objb;
+            objb.show();  // Derived class 
+    */
+    
+// Concept of virtual func  
+    
+       /* 
+          // create pointer of base class (Always of base class) 
+        
+            A *baseptr;
+            A obja;
+            
+            baseptr = &obja;
+            
+            baseptr->show();  // Base Class
+        
+       */
+       
+       
+        
+          //  if i made the object of class B 
+        
+            A *baseptr;
+            B objb;
+            
+            baseptr = &objb;
+            
+            baseptr->show();  // Now Again Output :   Base Class   { bcz the pointer is of base class }
+        
+            // Here comes the concept of virtual // just write virtual keyword in front of show func in base class 
+              // then the output changes to  "Derived class"
+              
+              
+    //  now whichever class object u refer it will call the respective function call 
+    
+    // This all done At run time   or Called "Late Binding" // whichever pointer u assign it will call 
+              
+   
+   
+    
+
+    return 0;
+}
